@@ -6,7 +6,7 @@ const Flat = React.lazy(() => import('./components/Explore/Flat'));
 const Aboutus = React.lazy(() => import('./components/Intro/Aboutus'))
 const Projects = React.lazy(() => import('./components/Explore/Projects'))
 const Contactus = React.lazy(() => import('./components/Footer/Contactus'))
-const Services = React.lazy(() => import('./components/Collections/services'))
+const Services = React.lazy(() => import('./components/Collections/Services'))
 const Header = React.lazy(() => import("./components/Header"))
 const Footer = React.lazy(() => import("./components/Footer"))
 const Intro = React.lazy(() => import("./components/Intro"))
