@@ -1,0 +1,61 @@
+.strip-image1 {
+    position: absolute;
+    top: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 36px;
+    height: 101.6px;
+    background-image: url('../../assets/images/strip11.jpg');
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .strip-text1 {
+    color: white;
+    text-align: center;
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 300;
+  }
+  /* .gap8{
+    margin-top: 40px; */
+    /* margin-bottom: 40px;
+  } */
+  
+  
+ /* Media Query for Tablets and Desktops (min-width: 768px) */
+@media (min-width: 768px) {
+    .strip-text1 {
+      font-size: 2.25rem; /* 4xl */
+    }
+  }
+  
+/* Media Query for Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+    .strip-image1 {
+      height: 80px; /* Reduce height for mobile */
+      margin-top: 20px; /* Adjust margin for mobile */
+      background-size: cover; /* Ensure the image covers the entire container */
+    }
+  
+    .strip-text1 {
+      font-size: 1.5rem; /* Reduce font size for mobile */
+    }
+    
+}
+@media (min-width: 1024px) {
+    .strip-image1 {
+      display: none; 
+    }
+  }
+   /* Gap Between Strip Image and First Project Heading */
+   /* .gap8{
+    margin-top: -25px;
+  } */
+
+ /* Hide the heading-text and heading-line in the Collections component */
+.hide .heading-text,
+.hide .heading-line {
+  display: none;
+}

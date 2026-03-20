@@ -1,0 +1,148 @@
+/* Banner.css */
+
+.banner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #222222;
+    margin-bottom: 20px;
+
+}
+
+.banner-content {
+    width: 100%;
+    max-width: 1300px;
+    box-shadow: 0 4px 10px #575753;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Desktop and larger screens */
+@media (min-width: 1024px) {
+    .banner-content {
+        flex-direction: row;
+        height: 550px; 
+    }
+}
+
+.contact-info {
+    width: 100%;
+    padding: 1.5rem;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px #575753;
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1024px) {
+    .contact-info {
+        width: 50%;
+        padding: 5rem;
+        height: 550px;
+    }
+}
+
+.contact-info h2 {
+    color: white;
+    font-size: 1.875rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.contact-form {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1024px) {
+    .contact-form {
+        width: 50%;
+        padding: 5rem;
+    }
+}
+
+.contact-form label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #f3f4f6;
+    /* padding-bottom: 0.5px; */
+    /* margin-bottom: 0.5rem; */
+   
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: white;
+    color: black;
+    border: 1px solid #d1d5db;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    ring: 2px solid #6b7280;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 6rem;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Adjust button width for tablets and larger screens */
+@media (min-width: 768px) {
+    .contact-form button {
+        width: auto;
+    }
+}
+
+/* Mobile version (flipping sections) */
+@media (max-width: 767px) {
+    .banner-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-form {
+        order: 1; /* Moves Contact Form Section above */
+    }
+    .contact-info {
+        order: 2; /* Moves Contact Information Section below */
+    }
+}
+.required-asterisk{
+color: red;
+}

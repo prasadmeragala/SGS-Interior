@@ -1,0 +1,124 @@
+/* Strip Image */
+.strip-image {
+    position: relative; /* Removed duplicate 'position: absolute' */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 36px;
+    height: 101.6px;
+    background-image: url('../../assets/images/strip11.jpg');
+    background-position: center;
+    background-size: contain;
+}
+
+.strip-text {
+    color: white;
+    text-align: center;
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 300;
+}
+
+/* Media Query for Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+    .strip-image {
+        height: 80px; /* Reduce height for mobile */
+        margin-top: 20px; /* Adjust margin for mobile */
+        background-size: cover; /* Ensure the image covers the entire container */
+    }
+
+    .strip-text {
+        font-size: 1.5rem; /* Reduce font size for mobile */
+    }
+}
+
+/* Media Query for Tablets and Desktops (min-width: 768px) */
+@media (min-width: 768px) {
+    .strip-text {
+        font-size: 2.25rem; /* 4xl */
+    }
+}
+
+
+/* Gap Between Strip Image and First Project Heading */
+.gap2 {
+    margin-bottom: -75px;
+}
+
+/* Projects Section */
+.projects-section {
+    padding-top: 6rem; /* 24px */
+    padding-left: 1rem; /* 4px */
+    padding-right: 1rem; /* 4px */
+}
+
+@media (min-width: 768px) {
+    .projects-section {
+        padding-left: 4rem; /* 16px */
+        padding-right: 4rem; /* 16px */
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-section {
+        padding-left: 8rem; /* 32px */
+        padding-right: 8rem; /* 32px */
+    }
+}
+
+.project-item {
+    margin-bottom: 4rem; /* 16px */
+}
+
+.project-heading {
+    text-align: center;
+    margin-bottom: 2rem; /* 8px */
+    color: #DADADA;
+}
+
+.project-heading h3 {
+    font-size: 1.25rem; /* xl */
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .project-heading h3 {
+        font-size: 1.5rem; /* 2xl */
+    }
+}
+
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem; /* 4px */
+}
+
+@media (min-width: 768px) {
+    .project-images {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.image-container {
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+}
+
+.project-image {
+    object-fit: cover;
+    width: 100%;
+    height: 16rem; /* 64px */
+}
+
+@media (min-width: 768px) {
+    .project-image {
+        height: 20rem; /* 80px */
+    }
+}
+
+/* Banner Section */
+.banner-section {
+    margin-bottom: 50px;
+}

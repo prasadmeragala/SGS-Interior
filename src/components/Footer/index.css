@@ -1,0 +1,36 @@
+/* General Styles */
+.footer-container {
+    width: 100%;
+    padding: 0 20px; /* Adjust padding for mobile */
+    /* margin-top: 50px; */
+    margin-bottom: 10px;
+    text-align: center; 
+}
+  
+  .footer-text {
+    font-size: 10px;
+    font-weight: 500;
+
+    color: #fafafa;
+    white-space: nowrap; /* Ensure text stays in a single line */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  }
+  
+  /* Media Query for Mobile Devices (max-width: 767px) */
+  @media (max-width: 767px) {
+    .footer-container {
+      padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .footer-text {
+      font-size: 10px; /* Adjust font size for mobile */
+    }
+  }
+  
+  /* Media Query for Tablets and Desktops (min-width: 768px) */
+  @media (min-width: 768px) {
+    .footer-container {
+      padding: 0 120px; /* Add padding for larger screens */
+    }
+  }

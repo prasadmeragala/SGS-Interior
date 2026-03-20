@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: "Poppins", sans-serif;
+	padding: 0;
+	margin: 0;
+	min-width: 100vw;
+	min-height: 100vh;
+	overflow-x: hidden;
+	background-color: #222222;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar * {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #425e85 !important;
+}
+
+.collection-item {
+	transition: transform 0.3s ease-in-out;
+  }
+  
+  .collection-item:hover {
+	transform: scale(1.05);
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 60px; /* Prevent content from hiding behind navbar */
+	
+}
+
+/* Navbar Base Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 120px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+	/* height: 80px; */
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color:transparent;
+}
+
+
+/* Navbar on Scroll */
+.navbar.scrolled {
+    background-color: #222222;
+    box-shadow: 0 4px 10px rgba(87, 87, 83, 0.5);
+}
+
+/* Logo */
+.logo-container {
+    flex: 1;
+	/* display: flex; */
+    align-items: center;
+    /* justify-content: flex-start; */
+    /* position: absolute;  */
+	left: 0; /* Aligns to the left edge */
+    /* padding-left: 10px;  */
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+	/* margin-left: 10px; */
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 130px;
+		
+    }
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    flex: 2;
+	
+}
+
+.nav-links li {
+    padding: 8px 12px;
+	
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.nav-links a:hover {
+    color: #aeaba4;
+}
+
+/* Contact Us Button */
+.contact-button-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-button {
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+
+.contact-button:hover {
+    background: white;
+    color: black;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+	position: absolute;
+    right: 15px; /* Ensure it's fully right-aligned */
+
+}
+
+/* Mobile Navigation */
+.nav-links-mobile {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    background-color: #222222;
+    padding: 40px;
+    border-radius: 1px;
+    width: stretch;
+}
+
+.nav-links-mobile a {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.nav-links-mobile a:hover {
+    color: #a9a6a0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .nav-links-mobile {
+        display: flex;
+    }
+
+    .contact-button-container {
+        display: none; /* Hide Contact Us button on small screens */
+    }
+	.navbar {
+		display: flex
+	;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 24px;
+	}
+}
+/* @media (min-width: 320px) and (max-width:767px) { 
+    
+ } */
