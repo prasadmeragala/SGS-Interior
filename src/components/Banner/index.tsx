@@ -1,13 +1,14 @@
 import { FaInstagram } from 'react-icons/fa';
 import "./index.css"; // Import the CSS file
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import backgroundimage from '../../assets/ap-12.jpg';
 
-const Banner = () => {
-  // Initialize EmailJS with your public key
-emailjs.init("LNgvvsyDboN2GOEeQ"); // Replace with your public key
+// Only important change: move init outside component
 
+import emailjs from "@emailjs/browser";
+emailjs.init("LNgvvsyDboN2GOEeQ");
+
+const Banner = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import logo from "../../assets/images/logo1.png";
-// import { useNavigate } from "react-router-dom";
-
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // Change navbar style on scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -15,13 +14,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu after click
   const handleLinkClick = () => {
-    if (isMobile) {
-      setIsMobile(false); 
-
-    }
+    if (isMobile) setIsMobile(false);
   };
- 
 
   return (
     <header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
@@ -30,55 +26,44 @@ const Navbar = () => {
         <img src={logo} alt="Company Logo" className="logo" />
       </div>
 
-      {/* Navigation */}
-      <ul className={isMobile ? "nav-links-mobile" : "nav-links ms-auto mb-2  mb-lg-0"}>
+      {/* Navigation Links */}
+      <ul className={isMobile ? "nav-links-mobile" : "nav-links"}>
         <li>
-          <a href="/" onClick={handleLinkClick}>
-            Home
-          </a>
+          <a href="#" onClick={handleLinkClick}>Home</a>
         </li>
         <li>
-          <a href="/services" onClick={handleLinkClick}>
-            Services
-          </a>
+          <a href="#services" onClick={handleLinkClick}>Services</a>
         </li>
         <li>
-          <a href="/flat" onClick={handleLinkClick}>
-            Projects
-          </a>
+          <a href="#projects" onClick={handleLinkClick}>Projects</a>
         </li>
         <li>
-          <a href="/aboutus" onClick={handleLinkClick}>
-            About Us
-          </a>
+          <a href="#about" onClick={handleLinkClick}>About Us</a>
         </li>
-      
 
-
-        {/* Contact Us button in mobile menu */}
+        {/* Mobile Contact */}
         {isMobile && (
           <li>
-            <a href="/contactus" className="contact-button1">
+            <a href="#contact" className="contact-button1">
               Contact Us
             </a>
           </li>
         )}
       </ul>
 
-      {/* Contact Us Button (Desktop) */}
+      {/* Desktop Contact Button */}
       {!isMobile && (
         <div className="contact-button-container">
-          <a href="/contactus" className="contact-button">
+          <a href="#contact" className="contact-button">
             Contact Us
           </a>
         </div>
       )}
 
-      {/* Mobile Menu Icon */}
+      {/* Mobile Menu Toggle */}
       <button
         className="mobile-menu-icon"
         onClick={() => setIsMobile(!isMobile)}
-        aria-label="Toggle navigation menu"
       >
         {isMobile ? "✖" : "☰"}
       </button>
