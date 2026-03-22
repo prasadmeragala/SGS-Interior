@@ -13,17 +13,17 @@ const App = () => {
     <div className="w-full flex flex-col">
       <Header />
 
+      <section id="about">
+        <Intro />
+      </section>
+
       <section id="services">
         <Collections />
       </section>
 
       <Confident />
 
-      <section id="about">
-        <Intro />
-      </section>
-
-      <section id="projects-preview">
+      <section id="projects">
         <Explore />
       </section>
 
