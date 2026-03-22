@@ -6,6 +6,7 @@ import Explore from "./components/Explore";
 import Intro from "./components/Intro";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/Whatsapp";
 
 const App = () => {
 
@@ -31,6 +32,7 @@ const App = () => {
         <Banner />
       </section>
 
+      <WhatsAppButton/>
       <Footer />
     </div>
   );

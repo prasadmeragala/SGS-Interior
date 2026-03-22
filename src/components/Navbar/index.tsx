@@ -32,13 +32,13 @@ const Navbar = () => {
           <a href="#" onClick={handleLinkClick}>Home</a>
         </li>
         <li>
+          <a href="#about" onClick={handleLinkClick}>About</a>
+        </li>
+        <li>
           <a href="#services" onClick={handleLinkClick}>Services</a>
         </li>
         <li>
           <a href="#projects" onClick={handleLinkClick}>Projects</a>
-        </li>
-        <li>
-          <a href="#about" onClick={handleLinkClick}>About Us</a>
         </li>
 
         {/* Mobile Contact */}
