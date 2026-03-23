@@ -1,80 +1,80 @@
 import { useState, useEffect } from "react";
 
 /* ---------- IMAGES (same as yours) ---------- */
-import SPK1 from "../../assets/images/SUBISHI POLAM @ Kompally/SPK1.jpg";
-import SPK2 from "../../assets/images/SUBISHI POLAM @ Kompally/SPK2.jpg";
-import SPK3 from "../../assets/images/SUBISHI POLAM @ Kompally/SPK3.jpg";
-import SPK4 from "../../assets/images/SUBISHI POLAM @ Kompally/SPK4.jpg";
-import SPK5 from "../../assets/images/SUBISHI POLAM @ Kompally/SPK5.jpg";
-import SPK6 from "../../assets/images/SUBISHI POLAM @ Kompally/SPK6.jpg";
+import SPK1 from "../../assets/images/1. SUBISHI POLAM @ Kompally/SPK1.jpg";
+import SPK2 from "../../assets/images/1. SUBISHI POLAM @ Kompally/SPK2.jpg";
+import SPK3 from "../../assets/images/1. SUBISHI POLAM @ Kompally/SPK3.jpg";
+import SPK4 from "../../assets/images/1. SUBISHI POLAM @ Kompally/SPK4.jpg";
+import SPK5 from "../../assets/images/1. SUBISHI POLAM @ Kompally/SPK5.jpg";
+import SPK6 from "../../assets/images/1. SUBISHI POLAM @ Kompally/SPK6.jpg";
 
-import EM1 from "../../assets/images/ERK/EMARALD1.png";
-import EM2 from "../../assets/images/ERK/EMARALD2.png";
-import EM3 from "../../assets/images/ERK/EMARALD3.png";
-import EM4 from "../../assets/images/ERK/EMARALD4.png";
-import EM5 from "../../assets/images/ERK/EMARALD5.png";
-import EM6 from "../../assets/images/ERK/EMARALD6.png";
+import RGT1 from "../../assets/images/2. RAJAPUSHPA GREENDALE @ Tellapur/RGT1.jpg";
+import RGT2 from "../../assets/images/2. RAJAPUSHPA GREENDALE @ Tellapur/RGT2.jpg";
+import RGT3 from "../../assets/images/2. RAJAPUSHPA GREENDALE @ Tellapur/RGT3.jpg";
+import RGT4 from "../../assets/images/2. RAJAPUSHPA GREENDALE @ Tellapur/RGT4.jpg";
+import RGT5 from "../../assets/images/2. RAJAPUSHPA GREENDALE @ Tellapur/RGT5.jpg";
+import RGT6 from "../../assets/images/2. RAJAPUSHPA GREENDALE @ Tellapur/RGT6.jpg";
 
-import MYHOME1 from "../../assets/images/MHA/MYHOME1.png";
-import MYHOME2 from "../../assets/images/MHA/MYHOME2.png";
-import MYHOME3 from "../../assets/images/MHA/MYHOME3.png";
-import MYHOME4 from "../../assets/images/MHA/MYHOME4.png";
-import MYHOME5 from "../../assets/images/MHA/MYHOME5.png";
-import MYHOME6 from "../../assets/images/MHA/MYHOME6.png";
+import VILLA1 from "../../assets/images/3. INDEPENDANT VILLA @ LB Nagar/VILLA1.jpg";
+import VILLA2 from "../../assets/images/3. INDEPENDANT VILLA @ LB Nagar/VILLA2.jpg";
+import VILLA3 from "../../assets/images/3. INDEPENDANT VILLA @ LB Nagar/VILLA3.jpg";
+import VILLA4 from "../../assets/images/3. INDEPENDANT VILLA @ LB Nagar/VILLA4.jpg";
+import VILLA5 from "../../assets/images/3. INDEPENDANT VILLA @ LB Nagar/VILLA5.jpg";
+import VILLA6 from "../../assets/images/3. INDEPENDANT VILLA @ LB Nagar/VILLA6.jpg";
 
-import RAJAPUSHPA1 from "../../assets/images/RG/RAJAPUSHPA1.png";
-import RAJAPUSHPA2 from "../../assets/images/RG/RAJAPUSHPA2.png";
-import RAJAPUSHPA3 from "../../assets/images/RG/RAJAPUSHPA3.png";
-import RAJAPUSHPA4 from "../../assets/images/RG/RAJAPUSHPA4.png";
-import RAJAPUSHPA5 from "../../assets/images/RG/RAJAPUSHPA5.png";
-import RAJAPUSHPA6 from "../../assets/images/RG/RAJAPUSHPA6.png";
+import PK1 from "../../assets/images/4. 4 BHK PENTHOUSE @ Kokapet/PK1.jpg";
+import PK2 from "../../assets/images/4. 4 BHK PENTHOUSE @ Kokapet/PK2.jpg";
+import PK3 from "../../assets/images/4. 4 BHK PENTHOUSE @ Kokapet/PK3.jpg";
+import PK4 from "../../assets/images/4. 4 BHK PENTHOUSE @ Kokapet/PK4.jpg";
+import PK5 from "../../assets/images/4. 4 BHK PENTHOUSE @ Kokapet/PK5.jpg";
+import PK6 from "../../assets/images/4. 4 BHK PENTHOUSE @ Kokapet/PK6.jpg";
 
-import VILLA1 from "../../assets/images/VLB/VILLA1.png";
-import VILLA2 from "../../assets/images/VLB/VILLA2.png";
-import VILLA3 from "../../assets/images/VLB/VILLA3.png";
-import VILLA4 from "../../assets/images/VLB/VILLA4.png";
-import VILLA5 from "../../assets/images/VLB/VILLA5.png";
-import VILLA6 from "../../assets/images/VLB/VILLA6.png";
+import EM1 from "../../assets/images/5. EMERALD GREEN @ Kompally/EM1.jpg"
+import EM2 from "../../assets/images/5. EMERALD GREEN @ Kompally/EM2.jpg"
+import EM3 from "../../assets/images/5. EMERALD GREEN @ Kompally/EM3.jpg"
+import EM4 from "../../assets/images/5. EMERALD GREEN @ Kompally/EM4.jpg"
+import EM5 from "../../assets/images/5. EMERALD GREEN @ Kompally/EM5.jpg"
+import EM6 from "../../assets/images/5. EMERALD GREEN @ Kompally/EM6.jpg"
 
-import PK1 from "../../assets/images/4bhk-PK/PK1.jpg";
-import PK2 from "../../assets/images/4bhk-PK/PK2.jpg";
-import PK3 from "../../assets/images/4bhk-PK/PK3.jpg";
-import PK4 from "../../assets/images/4bhk-PK/PK4.jpg";
-import PK5 from "../../assets/images/4bhk-PK/PK5.jpg";
-import PK6 from "../../assets/images/4bhk-PK/PK6.jpg";
+import v41 from "../../assets/images/6. CASHMERE COURT VILLA  4 @ Mokila/v41.jpg";
+import v42 from "../../assets/images/6. CASHMERE COURT VILLA  4 @ Mokila/v42.jpg";
+import v43 from "../../assets/images/6. CASHMERE COURT VILLA  4 @ Mokila/v43.jpg";
+import v44 from "../../assets/images/6. CASHMERE COURT VILLA  4 @ Mokila/v44.jpg";
+import v45 from "../../assets/images/6. CASHMERE COURT VILLA  4 @ Mokila/v45.jpg";
+import v46 from "../../assets/images/6. CASHMERE COURT VILLA  4 @ Mokila/v46.jpg";
 
-import v41 from "../../assets/images/villa4-CCM/v41.jpg";
-import v42 from "../../assets/images/villa4-CCM/v42.jpg";
-import v43 from "../../assets/images/villa4-CCM/v43.jpg";
-import v44 from "../../assets/images/villa4-CCM/v44.jpg";
-import v45 from "../../assets/images/villa4-CCM/v45.jpg";
-import v46 from "../../assets/images/villa4-CCM/v46.jpg";
+import CASHMERE1 from "../../assets/images/7. CASHMERE COURT VILLA 5 @ Mokila/CASHMERE1.jpg";
+import CASHMERE2 from "../../assets/images/7. CASHMERE COURT VILLA 5 @ Mokila/CASHMERE2.jpg";
+import CASHMERE3 from "../../assets/images/7. CASHMERE COURT VILLA 5 @ Mokila/CASHMERE3.jpg";
+import CASHMERE4 from "../../assets/images/7. CASHMERE COURT VILLA 5 @ Mokila/CASHMERE4.jpg";
+import CASHMERE5 from "../../assets/images/7. CASHMERE COURT VILLA 5 @ Mokila/CASHMERE5.jpg";
+import CASHMERE6 from "../../assets/images/7. CASHMERE COURT VILLA 5 @ Mokila/CASHMERE6.jpg";
 
-import CASHMERE1 from "../../assets/images/CCM/CASHMERE1.png";
-import CASHMERE2 from "../../assets/images/CCM/CASHMERE2.png";
-import CASHMERE3 from "../../assets/images/CCM/CASHMERE3.png";
-import CASHMERE4 from "../../assets/images/CCM/CASHMERE4.png";
-import CASHMERE5 from "../../assets/images/CCM/CASHMERE5.png";
-import CASHMERE6 from "../../assets/images/CCM/CASHMERE6.png";
+import SAINIKPURI1 from "../../assets/images/8. 3 BHK FLAT @ Sainikpuri/SAINIKPURI1.jpg";
+import SAINIKPURI2 from "../../assets/images/8. 3 BHK FLAT @ Sainikpuri/SAINIKPURI2.jpg";
+import SAINIKPURI3 from "../../assets/images/8. 3 BHK FLAT @ Sainikpuri/SAINIKPURI3.jpg";
+import SAINIKPURI4 from "../../assets/images/8. 3 BHK FLAT @ Sainikpuri/SAINIKPURI4.jpg";
+import SAINIKPURI5 from "../../assets/images/8. 3 BHK FLAT @ Sainikpuri/SAINIKPURI5.jpg";
+// import SAINIKPURI6 from "../../assets/images/8. 3 BHK FLAT @ Sainikpuri/SAINIKPURI6.jpg";
 
-import SAINIKPURI1 from "../../assets/images/SAINIK/SAINIKPURI1.png";
-import SAINIKPURI2 from "../../assets/images/SAINIK/SAINIKPURI2.png";
-import SAINIKPURI3 from "../../assets/images/SAINIK/SAINIKPURI3.png";
-import SAINIKPURI4 from "../../assets/images/SAINIK/SAINIKPURI4.png";
-import SAINIKPURI5 from "../../assets/images/SAINIK/SAINIKPURI5.png";
-import SAINIKPURI6 from "../../assets/images/SAINIK/SAINIKPURI6.png";
+import MYHOME1 from "../../assets/images/9. MY HOME ANKURA VILLA 219 @ Tellapur/MYHOME1.jpg";
+import MYHOME2 from "../../assets/images/9. MY HOME ANKURA VILLA 219 @ Tellapur/MYHOME2.jpg";
+import MYHOME3 from "../../assets/images/9. MY HOME ANKURA VILLA 219 @ Tellapur/MYHOME3.jpg";
+import MYHOME4 from "../../assets/images/9. MY HOME ANKURA VILLA 219 @ Tellapur/MYHOME4.jpg";
+import MYHOME5 from "../../assets/images/9. MY HOME ANKURA VILLA 219 @ Tellapur/MYHOME5.jpg";
+import MYHOME6 from "../../assets/images/9. MY HOME ANKURA VILLA 219 @ Tellapur/MYHOME6.jpg";
 
-import v61 from "../../assets/images/villa6-RG/v61.jpg";
-import v62 from "../../assets/images/villa6-RG/v62.jpg";
-import v63 from "../../assets/images/villa6-RG/v63.jpg";
-import v64 from "../../assets/images/villa6-RG/v64.jpg";
-import v65 from "../../assets/images/villa6-RG/v65.jpg";
-import v66 from "../../assets/images/villa6-RG/v66.jpg";
+import v61 from "../../assets/images/10. RAJAPUSHPA GREENDALE VILLA 259 @Tellapur/v61.jpg";
+import v62 from "../../assets/images/10. RAJAPUSHPA GREENDALE VILLA 259 @Tellapur/v62.jpg";
+import v63 from "../../assets/images/10. RAJAPUSHPA GREENDALE VILLA 259 @Tellapur/v63.jpg";
+import v64 from "../../assets/images/10. RAJAPUSHPA GREENDALE VILLA 259 @Tellapur/v64.jpg";
+import v65 from "../../assets/images/10. RAJAPUSHPA GREENDALE VILLA 259 @Tellapur/v65.jpg";
+import v66 from "../../assets/images/10. RAJAPUSHPA GREENDALE VILLA 259 @Tellapur/v66.jpg";
 
 /* ---------- DATA ---------- */
 const projects = [
   { title: "SUBISHI POLAM", location: "@Kompally", images: [SPK1, SPK2, SPK3, SPK4, SPK5, SPK6] },
-  { title: "RAJAPUSHPA GREENDALE", location: "@Tellapur", images: [RAJAPUSHPA1, RAJAPUSHPA2, RAJAPUSHPA3, RAJAPUSHPA4, RAJAPUSHPA5, RAJAPUSHPA6] },
+  { title: "RAJAPUSHPA GREENDALE", location: "@Tellapur", images: [RGT1, RGT2, RGT3, RGT4, RGT5, RGT6] },
   { title: "INDEPENDENT VILLA", location: "@LB Nagar", images: [VILLA1, VILLA2, VILLA3, VILLA4, VILLA5, VILLA6] },
 
   { title: "4BHK PENTHOUSE", location: "@Kokapet", images: [PK1, PK2, PK3, PK4, PK5, PK6] },
@@ -82,7 +82,7 @@ const projects = [
 
   { title: "CASHMERE COURT VILLA 04", location: "@Mokila", images: [v41, v42, v43, v44, v45, v46] },
   { title: "CASHMERE COURT VILLA 05", location: "@Mokila", images: [CASHMERE1, CASHMERE2, CASHMERE3, CASHMERE4, CASHMERE5, CASHMERE6] },
-  { title: "3BHK FLAT", location: "@Sainikpuri", images: [SAINIKPURI1, SAINIKPURI2, SAINIKPURI3, SAINIKPURI4, SAINIKPURI5, SAINIKPURI6] },
+  { title: "3BHK FLAT", location: "@Sainikpuri", images: [SAINIKPURI1, SAINIKPURI2, SAINIKPURI3, SAINIKPURI4, SAINIKPURI5] },
 
   { title: "MY HOME ANKURA VILLA 219", location: "@Tellapur", images: [MYHOME1, MYHOME2, MYHOME3, MYHOME4, MYHOME5, MYHOME6] },
   { title: "RAJAPUSHPA GREENDALE VILLA 259", location: "@Tellapur", images: [v61, v62, v63, v64, v65, v66] },
