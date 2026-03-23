@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
+/* ---------- IMAGES (same as yours) ---------- */
 import SPK1 from "../../assets/images/SUBISHI POLAM @ Kompally/SPK1.jpg";
 import SPK2 from "../../assets/images/SUBISHI POLAM @ Kompally/SPK2.jpg";
 import SPK3 from "../../assets/images/SUBISHI POLAM @ Kompally/SPK3.jpg";
@@ -70,8 +71,7 @@ import v64 from "../../assets/images/villa6-RG/v64.jpg";
 import v65 from "../../assets/images/villa6-RG/v65.jpg";
 import v66 from "../../assets/images/villa6-RG/v66.jpg";
 
-/* ---------- PROJECT DATA ---------- */
-
+/* ---------- DATA ---------- */
 const projects = [
   { title: "SUBISHI POLAM", location: "@Kompally", images: [SPK1, SPK2, SPK3, SPK4, SPK5, SPK6] },
   { title: "RAJAPUSHPA GREENDALE", location: "@Tellapur", images: [RAJAPUSHPA1, RAJAPUSHPA2, RAJAPUSHPA3, RAJAPUSHPA4, RAJAPUSHPA5, RAJAPUSHPA6] },
@@ -87,8 +87,6 @@ const projects = [
   { title: "MY HOME ANKURA VILLA 219", location: "@Tellapur", images: [MYHOME1, MYHOME2, MYHOME3, MYHOME4, MYHOME5, MYHOME6] },
   { title: "RAJAPUSHPA GREENDALE VILLA 259", location: "@Tellapur", images: [v61, v62, v63, v64, v65, v66] },
 ];
-
-/* ---------- COMPONENT ---------- */
 
 const Explore = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -117,6 +115,24 @@ const Explore = () => {
     );
   };
 
+  /* ---------- PRELOAD ---------- */
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const next =
+      selectedProject.images[(currentIndex + 1) % selectedProject.images.length];
+    const prev =
+      selectedProject.images[
+        (currentIndex - 1 + selectedProject.images.length) %
+          selectedProject.images.length
+      ];
+
+    [next, prev].forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [currentIndex, selectedProject]);
+
   const rows = [
     projects.slice(0, 3),
     projects.slice(3, 5),
@@ -144,7 +160,7 @@ const Explore = () => {
             className={`grid gap-4 ${
               row.length === 3
                 ? "grid-cols-1 md:grid-cols-3"
-                : "flex justify-center gap-6 flex-wrap"
+                : "grid-cols-1 md:grid-cols-2"
             }`}
           >
             {row.map((project, index) => (
@@ -155,14 +171,15 @@ const Explore = () => {
               >
                 <img
                   src={project.images[0]}
-                  className="w-full h-[250px] object-cover group-hover:scale-105 transition duration-300"
+                  loading="lazy"
+                  className="w-full h-[250px] md:h-[280px] object-cover group-hover:scale-105 transition duration-300"
                 />
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition duration-300"></div>
+                <div className="absolute inset-0 bg-black/40 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300"></div>
 
-                {/* HOVER TEXT */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-center">
+                {/* TEXT */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300">
                   <h3 className="text-white font-semibold text-lg">
                     {project.title}
                   </h3>
@@ -184,37 +201,28 @@ const Explore = () => {
             <div className="flex items-center justify-between mb-4">
               <div className="w-8"></div>
 
-              <h2 className="text-white text-sm md:text-base font-medium text-center">
+              <h2 className="text-white text-sm md:text-base text-center">
                 {selectedProject.title} {selectedProject.location}
               </h2>
 
-              <button
-                onClick={closeProject}
-                className="text-white text-xl w-8 text-right"
-              >
+              <button onClick={closeProject} className="text-white text-xl w-8">
                 ✕
               </button>
             </div>
 
             {/* IMAGE */}
             <div className="relative flex items-center justify-center">
-
-              <button
-                onClick={prevSlide}
-                className="absolute left-0 text-white text-3xl px-3"
-              >
+              <button onClick={prevSlide} className="absolute left-0 text-white text-3xl px-3">
                 ‹
               </button>
 
               <img
                 src={selectedProject.images[currentIndex]}
-                className="w-[80%] h-[400px] object-cover rounded"
+                loading="lazy"
+                className="w-full max-h-[300px] md:max-h-[500px] object-contain transition-all duration-300"
               />
 
-              <button
-                onClick={nextSlide}
-                className="absolute right-0 text-white text-3xl px-3"
-              >
+              <button onClick={nextSlide} className="absolute right-0 text-white text-3xl px-3">
                 ›
               </button>
             </div>
