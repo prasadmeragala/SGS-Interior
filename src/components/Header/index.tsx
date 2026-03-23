@@ -16,7 +16,7 @@ const Header = () => {
       {/* Background Video */}
       <video
         key={currentVideo}
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 "
         src={videos[currentVideo]}
         autoPlay
         loop
