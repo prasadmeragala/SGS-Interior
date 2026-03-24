@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full h-[65vh] md:h-screen flex items-center justify-center">
+    <div className="relative w-full h-[65vh] md:h-screen flex items-center justify-center">
       {/* Background Video */}
       <video
         key={currentVideo}
